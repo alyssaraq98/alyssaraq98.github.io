@@ -48,10 +48,6 @@ li {
     padding: 6px 12px;
 }
 
-input {
-    flex: 1 0 225px;
-}
-
 .flex-inner {
     display: flex;
     flex-wrap: wrap;
