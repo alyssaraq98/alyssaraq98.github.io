@@ -13,15 +13,6 @@ body {
 
 }
 
-#undefined {
-    text-align: center;
-    font-size: 1rem;
-    padding: 6px, 12px;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    border-radius: 3px;
-}
-
 h1 {
     text-align: center;
 }
@@ -38,20 +29,40 @@ h1 {
     flex: 1 0 255px;
 }
 
+#user_fname {
+    padding: 8px;
+}
+
 #lname {
     flex: 1 0 255px;
+}
+
+#user_lname {
+    padding: 8px;
 }
 
 #email {
     flex: 1 0 255px;
 }
 
+#user_email {
+    padding: 8px;
+}
+
+#phone_number {
+    flex: 1 0 255px;
+}
+
 #user_phone_number {
+    padding: 8px;
+}
+
+#text_field {
     flex: 1 0 255px;
 }
 
 #user_text_field {
-    flex: 1 0 255px;
+    padding: 8px;
 }
 
 .flex-inner {
@@ -59,8 +70,19 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    width: 80px;
 }
 
 #checkbox_one {
     justify-content: space-between;
+}
+
+#undefined {
+    text-align: center;
+    font-size: 1rem;
+    padding: 6px, 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    border-radius: 3px;
+    margin-left: 0px;
 }
