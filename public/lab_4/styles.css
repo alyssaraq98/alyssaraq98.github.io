@@ -1,16 +1,6 @@
-body {
+
+ body {
     background-color: goldenrod;
-}
-
-
-
-
-#wrapper {
-
-}
-
-#container {
-
 }
 
 h1 {
@@ -66,23 +56,30 @@ h1 {
 }
 
 .flex-inner {
-    justify-content: space-between;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
     width: 80px;
 }
 
 #checkbox_one {
-    justify-content: space-between;
+    width: 80px;
+}
+
+#checkbox_two {
+    width: 80px;
+}
+
+#checkbox_three {
+    width: 80px;
 }
 
 #undefined {
-    text-align: center;
-    font-size: 1rem;
+    margin-left: 0px;
     padding: 6px, 12px;
     text-transform: uppercase;
+    text-align: center;
     letter-spacing: 1.2px;
     border-radius: 3px;
-    margin-left: 0px;
 }
