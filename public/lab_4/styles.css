@@ -12,47 +12,23 @@ h1 {
     flex-wrap: wrap;
     align-items: center;
     max-width: 800px;
-    padding: 0px, 16px;
+    padding: 0px 16px;
 }
 
-#fname {
+li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.flex-outer label, p {
     flex: 1 0 255px;
-}
-
-#user_fname {
+    max-width: 225px;
     padding: 8px;
 }
 
-#lname {
-    flex: 1 0 255px;
-}
-
-#user_lname {
-    padding: 8px;
-}
-
-#email {
-    flex: 1 0 255px;
-}
-
-#user_email {
-    padding: 8px;
-}
-
-#phone_number {
-    flex: 1 0 255px;
-}
-
-#user_phone_number {
-    padding: 8px;
-}
-
-#text_field {
-    flex: 1 0 255px;
-}
-
-#user_text_field {
-    padding: 8px;
+input {
+    flex: 1 0 225px;
 }
 
 .flex-inner {
@@ -61,6 +37,10 @@ h1 {
     align-items: center;
     justify-content: space-between;
     width: 80px;
+}
+
+.flex-inner li {
+    width: 80px
 }
 
 #checkbox_one {
