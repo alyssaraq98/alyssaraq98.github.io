@@ -1,9 +1,25 @@
+body {
+    background-color: goldenrod;
+}
+
+
+
+
 #wrapper {
 
 }
 
 #container {
 
+}
+
+#undefined {
+    text-align: center;
+    font-size: 1rem;
+}
+
+h1 {
+    text-align: center;
 }
 
 .flex-outer {
