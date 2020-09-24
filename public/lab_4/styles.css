@@ -23,9 +23,17 @@ h1 {
 }
 
 .flex-outer {
-
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 800px;
+    padding: 0px, 16px;
 }
 
 .flex-inner {
-    
+    justify-content: space-between;
+}
+
+#checkbox_one {
+    justify-content: space-between;
 }
