@@ -10,63 +10,79 @@
             <div id="wrapper">
                 <h1>Alyssa Marielle Raqueno's Lab 4</h1>
 
-                <form>
+                <form action="/api" method="POST">
                     <ul class="flex-outer">
                         <li>
-                            <label for="fname" id="user_fname" type="Text" maxlength="140">
-                                First Name
-                            </label>
-                            <input type="text" id="fname" name="fname">
+                            <p>
+                                <label for="fname" id="user_fname" type="Text" maxlength="140">
+                                    First Name
+                                </label>
+                                <input type="text" id="fname" name="fname">
+                            </p>
                         </li>
                         <li>
-                            <label for="lname" id="user_lname" type="Text" maxlength="140">
-                                Last Name
-                            </label>
-                            <input type="text" id="lname" name="lname">
+                            <p>
+                                <label for="lname" id="user_lname" type="Text" maxlength="140">
+                                    Last Name
+                                </label>
+                                <input type="text" id="lname" name="lname">
+                            </p>
                         </li>
                         <li>
-                            <label for="email" id="user_email" type="Text">
-                                Email
-                            </label>
-                            <input type="email" id="email" name="email">
+                            <p>
+                                <label for="email" id="user_email" type="Text">
+                                    Email
+                                </label>
+                                <input type="email" id="email" name="email">
+                            </p>
                         </li>
                         <li>
-                            <label for="user_phone_number" id="phone_number" type="Text">
-                                Phone Number
-                            </label>
-                            <input type="tel" id="user_phone_number" name="phone_number">
+                            <p>
+                                <label for="user_phone_number" id="phone_number" type="Text">
+                                    Phone Number
+                                </label>
+                                <input type="tel" id="user_phone_number" name="phone_number">
+                            </p>
                         </li>
                         <li>
-                            <label for="text_field" id="user_text_field" type="Text">
-                                Text Field
-                            </label>
-                            <textarea id="text_field" name="message" rows="5" cols="33">
-                                Place Text Here!
-                            </textarea>
+                            <p>
+                                <label for="text_field" id="user_text_field" type="Text">
+                                    Text Field
+                                </label>
+                                <textarea id="text_field" name="message" rows="5" cols="33">
+                                    Place Text Here!
+                                </textarea>
+                            </p>
                         </li>
                         <li>
-                            <label for="user_age" id="user_age" name="age" type="Text">
-                                Age
-                            </label>
+                            <p>
+                                <label for="user_age" id="user_age" name="age" type="Text">
+                                    Age
+                                </label>
+                            </p>
                         </li>
                         <li>
-                            <ul class="flex-inner">
-                                <li>
-                                    <input type="checkbox" id="checkbox_one" name="user_checkbox_one">
-                                    <label for="checkbox_one">18-35</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="checkbox_two" name="user_checkbox_two">
-                                    <label for="checkbox_two">35-50</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="checkbox_three" name="user_checkbox_three">
-                                    <label for="checkbox_three">50-65</label>
-                                </li>
+                            <p>
+                                <ul class="flex-inner">
+                                    <li>
+                                        <input type="checkbox" id="checkbox_one" name="user_checkbox_one">
+                                        <label for="checkbox_one">18-35</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="checkbox_two" name="user_checkbox_two">
+                                        <label for="checkbox_two">35-50</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="checkbox_three" name="user_checkbox_three">
+                                        <label for="checkbox_three">50-65</label>
+                                    </li>
                             </ul>
+                            </p>
                         </li>
                         <li>
-                            <button method="POST" type="submit" name="undefined" id="undefined">Submit Form</button>
+                            <p>
+                                <button type="submit" name="undefined" id="undefined">Submit Form</button>
+                            </p>
                         </li>
                     </ul>
                 </form>
