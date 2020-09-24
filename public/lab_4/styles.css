@@ -21,17 +21,22 @@ li {
     align-items: center;
 }
 
-.flex-outer li label {
+.flex-outer li, label {
     flex: 1 0 125px;
     max-width: 225px;
     padding: 8px;
 }
 
-.flex-outer li p {
+.flex-outer li, p {
     padding: 8px;
+    flex: 1 0 125px;
 }
 
-.flex-outer li button {
+.flex-outer li, label * {
+    flex: 1 0 225px;
+}
+
+.flex-outer li, button {
     margin-left: 0px;
     padding: 6px 12px;
 }
@@ -57,18 +62,6 @@ input {
 
 .flex-inner li {
     width: 80px
-}
-
-#checkbox_one {
-    width: 80px;
-}
-
-#checkbox_two {
-    width: 80px;
-}
-
-#checkbox_three {
-    width: 80px;
 }
 
 #undefined {
