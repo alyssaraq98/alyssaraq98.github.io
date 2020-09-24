@@ -48,16 +48,16 @@ li {
     padding: 6px 12px;
 }
 
+.flex-inner li {
+    width: 80px
+}
+
 .flex-inner {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     flex: 1 0 225px;
-}
-
-.flex-inner li {
-    width: 80px
 }
 
 #undefined {
