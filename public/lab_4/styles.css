@@ -56,7 +56,6 @@ input {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    width: 80px;
     flex: 1 0 225px;
 }
 
