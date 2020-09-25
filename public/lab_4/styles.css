@@ -32,10 +32,6 @@ h1 {
     flex: 1 0 225px;
 }
 
-.flex-outer li textarea {
-    text-align: left;
-}
-
 .flex-outer button {
     text-transform: uppercase;
     letter-spacing: 1.2px;
@@ -43,6 +39,11 @@ h1 {
     margin-left: 0px;
     padding: 6px, 12px;
     text-align: center;
+}
+
+.flex-outer li button {
+    margin-left: 0px;
+    padding: 6px, 12px;
 }
 
 .flex-inner li {
