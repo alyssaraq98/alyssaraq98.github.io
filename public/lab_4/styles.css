@@ -22,7 +22,7 @@ h1 {
     flex: 1 0 225px;
 }
 
-.flex-outer li label, .flex-outer li p {
+.flex-outer > li > label, .flex-outer li p {
     flex: 1 0 125px;
     max-width: 225px;
     padding: 8px;
@@ -32,23 +32,19 @@ h1 {
     flex: 1 0 225px;
 }
 
+.flex-outer li textarea {
+    text-align: left;
+}
+
 .flex-outer button {
     text-transform: uppercase;
     letter-spacing: 1.2px;
     border-radius: 3px;
-}
-
-.flex-outer li button {
     margin-left: 0px;
-    padding: 6px 12px;
+    padding: 6px, 12px;
+    text-align: center;
 }
 
 .flex-inner li {
     width: 80px;
-}
-
-#button {
-    margin-left: 0px;
-    padding: 6px, 12px;
-    text-align: center;
 }
