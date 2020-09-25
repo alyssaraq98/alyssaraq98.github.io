@@ -33,10 +33,8 @@ h1 {
     flex: 1 0 225px;
 }
 
-#text_field {
+.flex-outer li textarea {
     text-align: left;
-    white-space: nowrap;
-    flex-direction: row;
 }
 
 .flex-outer button {
