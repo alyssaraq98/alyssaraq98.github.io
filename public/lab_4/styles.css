@@ -33,10 +33,6 @@ h1 {
     flex: 1 0 225px;
 }
 
-.flex-outer li textarea {
-    text-align: left;
-}
-
 .flex-outer button {
     text-transform: uppercase;
     letter-spacing: 1.2px;
