@@ -20,6 +20,7 @@ h1 {
 .flex-inner {
     justify-content: space-between;
     flex: 1 0 225px;
+    padding: 0px 16px;
 }
 
 .flex-outer > li > label, .flex-outer li p {
