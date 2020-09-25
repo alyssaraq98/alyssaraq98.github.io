@@ -33,6 +33,12 @@ h1 {
     flex: 1 0 225px;
 }
 
+#text_field {
+    text-align: left;
+    white-space: nowrap;
+    flex-direction: row;
+}
+
 .flex-outer button {
     text-transform: uppercase;
     letter-spacing: 1.2px;
