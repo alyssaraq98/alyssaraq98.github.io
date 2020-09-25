@@ -29,7 +29,7 @@ h1 {
 }
 
 .flex-outer li > label + * , .flex-inner {
-    flex: 1 0 125px;
+    flex: 1 0 225px;
 }
 
 .flex-outer button {
