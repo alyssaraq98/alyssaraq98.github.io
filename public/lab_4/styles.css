@@ -8,6 +8,7 @@ h1 {
 
 .flex-outer {
     max-width: 800px;
+    padding: 16px;
 }
 
 .flex-outer li, .flex-inner {
@@ -47,7 +48,6 @@ h1 {
     align-items: center;
     justify-content: space-between;
     flex: 1 0 225px;
-    width: 80px;
 }
 
 #undefined {
