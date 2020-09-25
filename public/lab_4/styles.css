@@ -32,15 +32,20 @@ h1 {
     flex: 1 0 225px;
 }
 
-.flex-outer li button {
-    margin-left: 0px;
-    padding: 6px, 12px;
-}
-
 .flex-outer button {
     text-transform: uppercase;
     letter-spacing: 1.2px;
     border-radius: 3px;
+}
+
+.flex-outer li, button {
+    margin-left: 0px;
+    padding: 6px 12px;
+}
+
+#button {
+    margin-left: 0px;
+    padding: 6px, 12px;
     text-align: center;
 }
 
