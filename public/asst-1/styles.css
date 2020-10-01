@@ -1,0 +1,11 @@
+.header img {
+    display: block;
+    height: 60px;
+    padding-top: 20.15px;
+  }
+  body {
+    width: 70%;
+    min-width: 800px;
+    margin: 0 auto;
+    background-color: #c1c360;
+  }
