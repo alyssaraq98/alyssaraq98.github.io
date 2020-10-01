@@ -1,11 +1,34 @@
+
+@media only screen and (max-width: 1000px) {
+
+
+}
+
+.body {
+  width: 70%;
+  min-width: 800px;
+  margin: 0 auto;
+  background-color: #c1c360;
+}
+
+.header {
+  font-family: 'Roboto Condensed';
+}
+
 .header img {
     display: block;
     height: 60px;
     padding-top: 20.15px;
+    border-radius: 4px;
   }
-  body {
-    width: 70%;
-    min-width: 800px;
-    margin: 0 auto;
-    background-color: #c1c360;
+
+  .wrapper img {
+    border-radius: 4px;
   }
+
+  .list {
+    font-family: 'Tangerine';
+    font-size: medium;
+  }
+
+  
