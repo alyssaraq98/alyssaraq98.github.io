@@ -27,7 +27,7 @@ body {
   width: 100px;
 }
 
-.image {
+img {
   border-radius: 4px;
   border-width: 1px;
   border-style: solid;
@@ -36,9 +36,6 @@ body {
 }
 
 div > img ~ p {
-  border-radius: 4px;
-  border-width: 1px;
-  border-style: solid;
   background-color: #19943A;
 }
 
