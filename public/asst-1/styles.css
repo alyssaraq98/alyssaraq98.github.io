@@ -15,11 +15,8 @@ body {
 }
 
 .wrapper .container {
-    
-}
-
-.wrapper .container > div {
-  flex: 0 1 auto;
+    width: 960px;
+    align-content: center;
 }
 
 .img {
@@ -71,10 +68,9 @@ div > img ~ p {
 
 @media only screen and (min-width: 1000px) {
   .one {
-      background-color: #19943A;
       margin-right: 15px;
       flex: 0 1 auto;
-      }
+      }  
 }
 
 @media only screen and (max-width: 1000px) {
@@ -82,9 +78,6 @@ div > img ~ p {
       margin-right: 0px;
       flex: 1 0 auto;
       }
-  .wrapper .container > div {
-    flex: 0 1 auto;
-  }
 }
 
 /* IPad Section */
