@@ -14,6 +14,14 @@ body {
   align-items: center;
 }
 
+.wrapper .container {
+    
+}
+
+.wrapper .container > div {
+  flex: 0 1 auto;
+}
+
 .img {
   height: 100px;
   width: 100px;
@@ -26,6 +34,19 @@ body {
   height: 190px;
   width: 190px;
 }
+
+div > img ~ p {
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.ol {
+  font-family: 'Tangerine';
+  font-size: medium;
+}
+
+/* Macbook Section */
 @media only screen and (min-width: 1000px) {
   .container {
       display: flex;
@@ -62,7 +83,7 @@ body {
       }
 }
 
-
+/* IPad Section */
 @media only screen and (min-width: 1000px) {
   .wrapper .container > div {
       flex: 0 1 auto;
@@ -77,9 +98,4 @@ body {
       margin-right: 0px;
       justify-content: center;
       }
-}
-
-.list {
-  font-family: 'Tangerine';
-  font-size: medium;
 }
