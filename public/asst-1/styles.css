@@ -82,6 +82,9 @@ div > img ~ p {
       margin-right: 0px;
       flex: 1 0 auto;
       }
+  .wrapper .container > div {
+    flex: 0 1 auto;
+  }
 }
 
 /* IPad Section */
