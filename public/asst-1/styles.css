@@ -22,15 +22,12 @@ div.container {
   justify-content: center;
 }
 
-.wrapper {
+.wrapper .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.container {
-    width: 960px;
-    align-content: center;
+  width: 960px;
+  align-content: center;
 }
 
 .wrapper .container > div {
@@ -82,4 +79,35 @@ div > img ~ p {
       align-items: flex-start;
       justify-content: center; 
   }
+}
+
+@media only screen and (min-width: 1000px) {
+  .one {
+      margin-right: 15px;
+      flex: 0 1 auto;
+      }  
+}
+
+@media only screen and (max-width: 1000px) {
+  .one {
+      margin-right: 0px;
+      flex: 1 0 auto;
+      }
+}
+
+/* IPad Section */
+@media only screen and (min-width: 1000px) {
+  .wrapper .container > div {
+      flex: 0 1 auto;
+      margin-right: 15px;
+      justify-content: center;
+      }
+}
+
+@media only screen and (max-width: 1000px) {
+  .wrapper .container > div {
+      flex: 1 0 auto;
+      margin-right: 0px;
+      justify-content: center;
+      }
 }
