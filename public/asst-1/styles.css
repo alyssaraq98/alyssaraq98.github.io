@@ -78,7 +78,7 @@ div > img ~ p {
       justify-content: space-between; 
   }
   .one {
-    margin-right: 0px;
+    margin-right: 15px;
     flex: 0 1 auto;
     }
 }
