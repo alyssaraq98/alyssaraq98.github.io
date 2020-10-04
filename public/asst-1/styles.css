@@ -14,14 +14,6 @@ body {
   align-items: center;
 }
 
-div.container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
 .wrapper .container {
   display: flex;
   flex-direction: column;
@@ -31,7 +23,9 @@ div.container {
 }
 
 .wrapper .container > div {
-  flex: 0 1 auto;
+  flex: 1 0 auto;
+  margin-right: 0px;
+  justify-content: center;
 }
 
 .img {
@@ -62,7 +56,7 @@ div > img ~ p {
 
 /* Macbook Section */
 @media only screen and (min-width: 1000px) {
-  .container {
+  div.container {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -72,7 +66,7 @@ div > img ~ p {
 }
 
 @media only screen and (max-width: 800px) {
-  .container {
+  div.container {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
