@@ -1,21 +1,24 @@
 body {
-  background-color:#3DE068;
+  background-color:#E0C243;
+  font-family: 'Roboto', serif;
 }
 
 .header {
-  background-color: #064717;
-  font: normal 18px/1.5 "Times New Roman", "Times", serif;
-  color: #3DE068;
+  background-color: #E04943;
+  font: normal 18px/1.5 "Lalezar", serif;
+  color: #E0C243;
   margin-bottom: 15px;
   padding: 15px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-evenly;
 }
 
 .wrapper .container {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   width: 960px;
 }
@@ -24,6 +27,7 @@ body {
   flex: 0 1 auto;
   margin-right: 15px;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -36,40 +40,44 @@ img {
   border-radius: 4px;
   border-width: 1px;
   border-style: solid;
-  height: 190px;
+  height: 300px;
   width: 190px;
 }
 
 div > img ~ p {
-  background-color: #19943A;
+  background-color: #E04943;
   flex-wrap: wrap;
 }
 
-.ol {
-  font-family: 'Tangerine';
+.ol h2 {
+  font-family: 'Open Sans';
   font-size: medium;
 }
 
 .two {
-  background-color: #19943A;
+  background-color: #E04943;
 }
 
-/* Macbook Section */
+/* IPad Section */
 @media only screen and (min-width: 1000px) {
+  .header {
+    justify-content: space-between;
+  }
   .container {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       align-items: flex-start;
-      justify-content: space-between; 
+      justify-content: center; 
   }
   .one {
     margin-right: 15px;
     flex: 0 1 auto;
+    flex-direction: column;
     }  
 }
 
-/* IPad Section */
+/* MacBook Section */
 @media only screen and (max-width: 1000px) {
   .wrapper .container > div {
       flex: 1 0 auto;
