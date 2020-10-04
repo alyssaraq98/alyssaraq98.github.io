@@ -69,31 +69,21 @@ div > img ~ p {
     }  
 }
 
-@media only screen and (max-width: 800px) {
-  div.container {
+@media only screen and (max-width: 1000px) {
+  .wrapper .container > div {
+      flex: 1 0 auto;
+      margin-right: 0px;
+      justify-content: center;
+      }
+    div.container {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       align-items: flex-start;
       justify-content: space-between; 
-  }
-  .one {
-    margin-right: 15px;
-    flex: 0 1 auto;
     }
-}
-
-@media only screen and (max-width: 1000px) {
-  .wrapper .container > div {
-      flex: 1 0 auto;
+    .one {
       margin-right: 15px;
-      justify-content: center;
+      flex: 0 1 auto;
       }
-  div.container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center; 
-}
 }
