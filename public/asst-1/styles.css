@@ -19,7 +19,6 @@ div.container {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-between;
   justify-content: center;
 }
 
@@ -56,4 +55,16 @@ div > img ~ p {
 
 .two {
   background-color: #19943A;
+}
+
+/* Macbook Section */
+@media only screen and (min-width: 1000px) {
+  div.container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between; 
+      justify-content: center;
+  }
 }
