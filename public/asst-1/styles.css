@@ -73,7 +73,6 @@ div > img ~ p {
   .one {
     margin-right: 15px;
     flex: 0 1 auto;
-    flex-direction: column;
     }  
 }
 
@@ -86,7 +85,7 @@ div > img ~ p {
       }
     .container {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       flex-wrap: wrap;
       align-items: flex-start;
       justify-content: center; 
@@ -94,5 +93,9 @@ div > img ~ p {
     .one {
       margin-right: 15px;
       flex: 0 1 auto;
+      
       }
+    .one p {
+      flex-direction: row;
+    }
 }
