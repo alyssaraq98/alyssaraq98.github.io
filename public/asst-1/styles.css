@@ -16,7 +16,7 @@ body {
 
 .wrapper .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   width: 960px;
   align-content: center;
