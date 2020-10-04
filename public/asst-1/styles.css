@@ -103,7 +103,7 @@ div > img ~ p {
         flex-direction: row;
         flex-wrap: wrap;
         align-items: flex-start;
-        justify-content: space-between; 
+        justify-content: center; 
     }
 }
 
@@ -118,6 +118,6 @@ div > img ~ p {
       flex-direction: row;
       flex-wrap: wrap;
       align-items: flex-start;
-      justify-content: space-between; 
+      justify-content: center; 
   }
 }
