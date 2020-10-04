@@ -17,7 +17,7 @@ body {
 .wrapper .container {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  
   width: 960px;
   align-content: center;
 }
@@ -26,6 +26,7 @@ body {
   flex: 1 0 auto;
   margin-right: 0px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .img {
@@ -43,6 +44,7 @@ img {
 
 div > img ~ p {
   background-color: #19943A;
+  flex-wrap: wrap;
 }
 
 .ol {
@@ -96,6 +98,13 @@ div > img ~ p {
       margin-right: 15px;
       justify-content: center;
       }
+      div.container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center; 
+    }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -104,4 +113,11 @@ div > img ~ p {
       margin-right: 0px;
       justify-content: center;
       }
+    div.container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center; 
+  }
 }
