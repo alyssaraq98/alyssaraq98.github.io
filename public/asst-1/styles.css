@@ -19,6 +19,10 @@ body {
     align-content: center;
 }
 
+.wrapper .container > div {
+  flex: 0 1 auto;
+}
+
 .img {
   height: 100px;
   width: 100px;
@@ -43,56 +47,4 @@ div > img ~ p {
 
 .two {
   background-color: #19943A;
-}
-
-/* Macbook Section */
-@media only screen and (min-width: 1000px) {
-  .container {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: space-between; 
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .container {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: center; 
-  }
-}
-
-@media only screen and (min-width: 1000px) {
-  .one {
-      margin-right: 15px;
-      flex: 0 1 auto;
-      }  
-}
-
-@media only screen and (max-width: 1000px) {
-  .one {
-      margin-right: 0px;
-      flex: 1 0 auto;
-      }
-}
-
-/* IPad Section */
-@media only screen and (min-width: 1000px) {
-  .wrapper .container > div {
-      flex: 0 1 auto;
-      margin-right: 15px;
-      justify-content: center;
-      }
-}
-
-@media only screen and (max-width: 1000px) {
-  .wrapper .container > div {
-      flex: 1 0 auto;
-      margin-right: 0px;
-      justify-content: center;
-      }
 }
