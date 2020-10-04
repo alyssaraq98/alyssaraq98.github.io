@@ -58,7 +58,7 @@ div > img ~ p {
   background-color: #E04943;
 }
 
-/* IPad Section */
+/* MacBook Section */
 @media only screen and (min-width: 1000px) {
   .header {
     justify-content: space-between;
@@ -68,7 +68,7 @@ div > img ~ p {
       flex-direction: row;
       flex-wrap: wrap;
       align-items: flex-start;
-      justify-content: center; 
+      justify-content: space-between; 
   }
   .one {
     margin-right: 15px;
@@ -77,7 +77,7 @@ div > img ~ p {
     }  
 }
 
-/* MacBook Section */
+/* IPad Section */
 @media only screen and (max-width: 1000px) {
   .wrapper .container > div {
       flex: 1 0 auto;
@@ -89,7 +89,7 @@ div > img ~ p {
       flex-direction: row;
       flex-wrap: wrap;
       align-items: flex-start;
-      justify-content: space-between; 
+      justify-content: center; 
     }
     .one {
       margin-right: 15px;
