@@ -67,12 +67,14 @@
                 </form>
             </div>
         </div>  
-        function testFunction() {
-            fetch('/api')
-            .then((response) => response.text())
-            .then((response) => {
-                 console.log(response);
-            })
-       }  
+        <script>
+            function testFunction() {
+                fetch('/api')
+                .then((response) => response.text())
+                .then((response) => {
+                    console.log(response);
+                })
+            }  
+        </script>
     </body>
 </html>
