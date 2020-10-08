@@ -75,7 +75,9 @@
                     console.log(response);
                 })
 
-                document.getElementsByClassName(".checkbox-list-label").innerHTML = "Fruits";
+                let originalLabel = document.querySelector(".checkbox-list-label");
+                let newLabel = "FRUITS";
+                originalLabel.innerHTML = newLabel;
 
                 const ageElements = document.querySelectorAll(".flex-inner li label");
                 const fruitArray = ["kiwi", "dragonfruit", "pomelo"];
