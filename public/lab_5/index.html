@@ -75,12 +75,18 @@
                     console.log(response);
                 })
 
+                let userFirstNameInput = document.querySelector("#fname");
+                let userLastNameInput = document.querySelector("#lname");
+                let headerLabel = document.querySelector("h1");
+                headerLabel.innerHTML = "Lab 5 for " + userFirstNameInput.value + " " + userLastNameInput.value;
+
+
                 let originalLabel = document.querySelector(".checkbox-list-label");
                 let newLabel = "FRUITS";
                 originalLabel.innerHTML = newLabel;
 
                 const ageElements = document.querySelectorAll(".flex-inner li label");
-                const fruitArray = ["kiwi", "dragonfruit", "pomelo"];
+                const fruitArray = ["grapes", "coconut", "banana"];
                 ageElements.forEach((element, i) => {
                     const text = element.innerText;
                     console.log(text);
