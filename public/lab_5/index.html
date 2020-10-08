@@ -69,20 +69,27 @@
         </div>  
         <script>
             function testFunction() {
+                // Step 7 from lab instructions
                 fetch('/api')
                 .then((response) => response.text())
                 .then((response) => {
                     console.log(response);
                 })
 
+                // Change background color
+                const newColor = 'rgb(' + Math.random()*256 + ',' + Math.random()*256 + ',' + Math.random()*256 + ')';
+                document.body.style.backgroundColor = newColor;
+
+                // Change header1 label
                 let headerLabel = document.querySelector("h1");
                 headerLabel.innerHTML = "Lab 5 for Alyssa Marielle Raqueno";
 
-
+                // Change Age label
                 let originalLabel = document.querySelector(".checkbox-list-label");
                 let newLabel = "FRUITS";
                 originalLabel.innerHTML = newLabel;
 
+                // Change age ranges to fruits
                 const ageElements = document.querySelectorAll(".flex-inner li label");
                 const fruitArray = ["grapes", "coconut", "banana"];
                 ageElements.forEach((element, i) => {
@@ -91,6 +98,7 @@
                     element.innerText = fruitArray[i];
                 });
 
+                // Shift form to center
                 document.querySelector(".flex-outer").style.margin = "0 auto";
             }  
         </script>
