@@ -42,8 +42,8 @@
                                 </label>
                                 <textarea rows="5" cols="33" id="text_field" name="message">This is some default message text.</textarea>   
                         </li>
-                        <li class="checkbox-list-label">
-                            <p>Age</p>
+                        <li>
+                            <p class="checkbox-list-label">Age</p>
                             <ul class="flex-inner">
                                 <li>
                                     <input type="checkbox" id="checkbox_one" name="user_checkbox_one">
@@ -75,12 +75,14 @@
                     console.log(response);
                 })
 
+                document.getElementsByClassName(".checkbox-list-label").innerHTML = "Fruits";
+
                 const ageElements = document.querySelectorAll(".flex-inner li label");
-                const fruitArray = ["orange", "starfruit", "grape"];
+                const fruitArray = ["kiwi", "dragonfruit", "pomelo"];
                 ageElements.forEach((element, i) => {
                     const text = element.innerText;
                     console.log(text);
-                    element.innerText = fruitArray[i].toUpperCase;
+                    element.innerText = fruitArray[i];
                 });
             }  
         </script>
