@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Alyssa Marielle Raqueno's Lab 4</title>
+        <title>Alyssa Marielle Raqueno's Lab 5</title>
         <link href="styles.css" rel="stylesheet">
     </head>
     <body>
@@ -61,7 +61,7 @@
                         </li>
                         <li>
                             <button type="submit" name="button" id="button">Submit Form</button>
-                            <button onclick="activate()" type="submit" name="button-one" id="button-one">Activate</button>
+                            <button onclick="testFunction()" type="button" name="button-one" id="button-one">Activate</button>
                         </li>
                     </ul>
                 </form>
@@ -74,6 +74,14 @@
                 .then((response) => {
                     console.log(response);
                 })
+
+                const ageElements = document.querySelector(".flex-inner li label");
+                const fruitArray = ["orange", "starfruit", "grape"];
+                ageElements.forEach((element, i) => {
+                    const text = element.innerText;
+                    console.log(text)
+                    element.innerText = fruitArray[i]
+                });
             }  
         </script>
     </body>
