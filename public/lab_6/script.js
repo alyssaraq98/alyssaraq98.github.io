@@ -1,6 +1,11 @@
 // You may wish to find an effective randomizer function on MDN.
 
-import countries from './public/lab_6/countries.js';
+/* Randomizer function from MDN below */
+function getRandomIntInclusive(min, max) {
+  const newMin = Math.ceil(min);
+  const newMax = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
 function range(int) {
   const arr = [];
@@ -31,7 +36,12 @@ document.body.addEventListener('submit', async (e) => {
   })
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
-      // You're going to do your lab work in here. Replace this comment.
+      const countriesArray = range[10];
+      const countriesArrayTwo = countriesArray.map(() => {
+        const returnNumber = getRandomIntInclusive(0, 243);
+        return fromServer(returnNumber);
+      })
+      const reverseOrder = countriesArray.sort((a, b) => sortFunction(a, b, key));
       console.log('fromServer', fromServer);
     })
     .catch((err) => console.log(err));
