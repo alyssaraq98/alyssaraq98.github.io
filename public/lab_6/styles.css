@@ -26,6 +26,21 @@ body {
 }
 
 /* Enter YOUR lab styles after this line */
+
+.wrapper {
+
+}
+
+.container, .flex-outer {
+
+}
+
+.header {
+
+}
+
+/* Provided code below */
+
 .flex-outer li,
 .flex-inner {
   display: flex;

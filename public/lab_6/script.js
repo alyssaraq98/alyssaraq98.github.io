@@ -1,5 +1,7 @@
 // You may wish to find an effective randomizer function on MDN.
 
+import countries from './public/lab_6/countries.js';
+
 function range(int) {
   const arr = [];
   for (let i = 0; i < int; i += 1) {
