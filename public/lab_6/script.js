@@ -36,12 +36,13 @@ document.body.addEventListener('submit', async (e) => {
   })
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
-      const countriesArray = range[10];
-      const countriesArrayTwo = countriesArray.map(() => {
-        const returnNumber = getRandomIntInclusive(0, 243);
-        return fromServer(returnNumber);
-      })
-      const reverseOrder = countriesArray.sort((a, b) => sortFunction(a, b, key));
+      const initArray = range[10];
+      const initNewArray = initArray.map(() => {
+        const pickNumber = getRandomIntInclusive(0, 243);
+        return fromServer[pickNumber];
+      });
+
+      const reverseOrder = initNewArray.sort((a, b) => sortFunction(a, b, 'name'));
       console.log('fromServer', fromServer);
     })
     .catch((err) => console.log(err));
