@@ -24,7 +24,7 @@ function sortFunction(a, b, key) {
   return 0;
 }
 
-document.getElementsByClassName('.submitButton').onclick = document.body.addEventListener('submit', async (e) => {
+document.body.addEventListener('submit', async (e) => {
   e.preventDefault(); // this stops whatever the browser wanted to do itself.
   const form = $(e.target).serializeArray(); // here we're using jQuery to serialize the form
   fetch('/api', {
@@ -36,8 +36,9 @@ document.getElementsByClassName('.submitButton').onclick = document.body.addEven
   })
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
+      console.log('fromServer', fromServer);
       // No. 10
-      const initArray = range[10];
+      const initArray = range(10);
       const initNewArray = initArray.map(() => {
         const pickNumber = getRandomIntInclusive(0, 243);
         return fromServer[pickNumber];
@@ -47,7 +48,8 @@ document.getElementsByClassName('.submitButton').onclick = document.body.addEven
       const reverseOrder = initNewArray.sort((a, b) => sortFunction(a, b, 'name'));
 
       // No. 12
-      const ol = document.createElement('ol').className('flex-inner');
+      const ol = document.createElement('ol');
+      ol.className = 'flex-inner';
       $('form').prepend(ol);
 
       // No. 13
@@ -57,8 +59,6 @@ document.getElementsByClassName('.submitButton').onclick = document.body.addEven
         $(li).append(`<label for=${element.code}>${element.name}</label>`);
         $(ol).append(li);
       });
-
-      console.log('fromServer', fromServer);
     })
     .catch((err) => console.log(err));
 });
