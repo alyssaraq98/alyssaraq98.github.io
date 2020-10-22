@@ -53,8 +53,9 @@ document.body.addEventListener('submit', async (e) => {
       // No. 13
       reverseOrder.forEach((element, i) => {
         const li = document.createElement('li');
-        $(li).append('<input type="checkbox" id="countryName" name="country">');
-        $(li).append(`<label for="countryName">${element.name}</label>`);
+        $(li).append(`<input type="checkbox" value=${element.code} id=${element.code}>`);
+        $(li).append(`<label for=${element.code}>${element.name}</label>`);
+        $(ol).append(li);
       });
 
       // No. 14
