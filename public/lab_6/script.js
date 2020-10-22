@@ -36,13 +36,29 @@ document.body.addEventListener('submit', async (e) => {
   })
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
+      // No. 10
       const initArray = range[10];
       const initNewArray = initArray.map(() => {
         const pickNumber = getRandomIntInclusive(0, 243);
         return fromServer[pickNumber];
       });
 
+      // No. 11
       const reverseOrder = initNewArray.sort((a, b) => sortFunction(a, b, 'name'));
+
+      // No. 12
+      const ol = document.createElement('ol').className('flex-inner');
+      $('form').prepend(ol);
+
+      // No. 13
+      reverseOrder.forEach((element, i) => {
+        const li = document.createElement('li');
+        li.append('<input type="checkbox" id="countryName" name="country">');
+        li.append(`<label for="countryName">${element.name}</label>`);
+      });
+
+      // No. 14
+      
       console.log('fromServer', fromServer);
     })
     .catch((err) => console.log(err));
