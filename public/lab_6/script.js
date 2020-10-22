@@ -37,6 +37,12 @@ document.body.addEventListener('submit', async (e) => {
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
       console.log('fromServer', fromServer);
+
+      // No. 14
+      if (document.querySelector('.flex-inner')) {
+        document.querySelector('.flex-inner').remove();
+      }
+
       // No. 10
       const initArray = range(10);
       const initNewArray = initArray.map(() => {
@@ -53,7 +59,7 @@ document.body.addEventListener('submit', async (e) => {
       $('form').prepend(ol);
 
       // No. 13
-      reverseOrder.forEach((element, i) => {
+      reverseOrder.forEach((element) => {
         const li = document.createElement('li');
         $(li).append(`<input type="checkbox" value=${element.code} id=${element.code}>`);
         $(li).append(`<label for=${element.code}>${element.name}</label>`);
