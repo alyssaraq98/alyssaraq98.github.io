@@ -17,9 +17,9 @@ function range(int) {
 
 function sortFunction(a, b, key) {
   if (a[key] < b[key]) {
-    return -1;
-  } if (a[key] > b[key]) {
     return 1;
+  } if (a[key] > b[key]) {
+    return -1;
   }
   return 0;
 }
@@ -51,7 +51,7 @@ document.body.addEventListener('submit', async (e) => {
       });
 
       // No. 11
-      const reverseOrder = initNewArray.sort((a, b) => sortFunction(a, b, 'name'));
+      const reverse = initNewArray.sort((a, b) => sortFunction(a, b, 'name'));
 
       // No. 12
       const ol = document.createElement('ol');
@@ -59,7 +59,7 @@ document.body.addEventListener('submit', async (e) => {
       $('form').prepend(ol);
 
       // No. 13
-      reverseOrder.forEach((element) => {
+      reverse.forEach((element) => {
         const li = document.createElement('li');
         $(li).append(`<input type="checkbox" value=${element.code} id=${element.code}>`);
         $(li).append(`<label for=${element.code}>${element.name}</label>`);
