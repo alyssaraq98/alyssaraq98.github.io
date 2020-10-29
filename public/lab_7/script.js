@@ -1,6 +1,6 @@
 function convertRestaurantsToCategories(restaurantList) {
   // process your restaurants here! WHERE REDUCER FUNCTION GOES
-  const newDataShape = randomRestaurantsArray.reduce((collection, item, i) => {
+  const newDataShape = restaurantList.reduce((collection, item, i) => {
     // for each item, check if we have a category for that item already
     const findCat = collection.find((findItem) => findItem.label === item.category);
 
@@ -11,16 +11,18 @@ function convertRestaurantsToCategories(restaurantList) {
       });
     } else {
       const position = collection.findIndex((el) => el.label === item.category);
-      collection[position].y += 1;
+      position.y += 1;
     }
     return collection;
   }, []);
+
+  console.table(newDataShape);
 
   return list;
 }
 
 function makeYourOptionsObject(datapointsFromRestaurantsList) {
-  // set your chart configuration here! console.table(newDataShape);
+  // set your chart configuration here!
 
   const div2 = document.createElement('div');
   const obj = {
