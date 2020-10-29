@@ -4,7 +4,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import fetch from 'node-fetch';
-import countries from './public/lab_6/countries.js';
 
 dotenv.config();
 
@@ -21,21 +20,6 @@ app.use((req, res, next) => {
   next();
 });
 
-function range(int) {
-  const arr = [];
-  for (let i = 0; i < int; i += 1) {
-    arr.push(i);
-  }
-  return arr;
-}
-
-function getRandomIntInclusive(min, max) {
-  const min1 = Math.ceil(min);
-  const max1 = Math.floor(max);
-  return Math.floor(Math.random() * (max1 - min1 + 1) + min1);
-  // The maximum is inclusive and the minimum is inclusive
-}
-
 app.route('/api')
   .get((req, res) => {
     console.log('GET request detected');
@@ -47,14 +31,6 @@ app.route('/api')
     const json = await data.json();
     console.log('Fetch request data', data);
     res.json(json);
-    res.json(countries);
-
-    const arrayOfTenItems = range(10);
-    const randomRestaurantsArray = arrayOfTenItems.map((item) => {
-      const which = getRandomIntInclusive(0, json.length);
-      const restaurant = json[which]; // we are not worrying about uniqueness here
-      return restaurant;
-    });
   });
 
 app.listen(port, () => {

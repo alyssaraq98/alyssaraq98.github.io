@@ -1,6 +1,27 @@
+function range(int) {
+  const arr = [];
+  for (let i = 0; i < int; i += 1) {
+    arr.push(i);
+  }
+  return arr;
+}
+
+function getRandomIntInclusive(min, max) {
+  const min1 = Math.ceil(min);
+  const max1 = Math.floor(max);
+  return Math.floor(Math.random() * (max1 - min1 + 1) + min1);
+  // The maximum is inclusive and the minimum is inclusive
+}
+
 function convertRestaurantsToCategories(restaurantList) {
+  const arrayOfTenItems = range(10);
+  const randomRestaurantsArray = arrayOfTenItems.map((item) => {
+    const which = getRandomIntInclusive(0, json.length);
+    const restaurant = json[which]; // we are not worrying about uniqueness here
+    return restaurant;
+  });
   // process your restaurants here! WHERE REDUCER FUNCTION GOES
-  const newDataShape = restaurantList.reduce((collection, item, i) => {
+  const newDataShape = randomRestaurantsArray.reduce((collection, item, i) => {
     // for each item, check if we have a category for that item already
     const findCat = collection.find((findItem) => findItem.label === item.category);
 
