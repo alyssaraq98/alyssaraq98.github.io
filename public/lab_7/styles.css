@@ -12,8 +12,8 @@ body {
   min-height: 100%;
 }
 
-.header {
-  color: #fff;
+.header h1{
+  color: #FADC7A;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
