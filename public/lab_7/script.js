@@ -16,7 +16,7 @@ function convertRestaurantsToCategories(restaurantList) {
     return collection;
   }, []);
 
-  return restaurantList;
+  return newDataShape;
 }
 
 function makeYourOptionsObject(datapointsFromRestaurantsList) {
