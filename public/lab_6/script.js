@@ -15,15 +15,10 @@ function range(int) {
   return arr;
 }
 
-<<<<<<< HEAD
-function sortFunction(a, b, key) {
-  if (a[key] < b[key]) {
-=======
 function sortFunction(org, comparison, key) {
   if (org[key] < comparison[key]) {
     return -1;
   } if (org[key] > comparison[key]) {
->>>>>>> 6535b5ca7cdbbc80d5ec2e63890b0f4d1176dcd5
     return 1;
   } if (a[key] > b[key]) {
     return -1;
@@ -43,7 +38,6 @@ document.body.addEventListener('submit', async (e) => {
     body: JSON.stringify(form)
   })
     .then((fromServer) => fromServer.json())
-<<<<<<< HEAD
     .then((fromServer) => {
       console.log('fromServer', fromServer);
 
@@ -73,17 +67,9 @@ document.body.addEventListener('submit', async (e) => {
         $(li).append(`<input type="checkbox" value=${element.code} id=${element.code}>`);
         $(li).append(`<label for=${element.code}>${element.name}</label>`);
         $(ol).append(li);
-      });
-=======
-    .then((jsonFromServer) => {
-      // You're going to do your lab work in here. Replace this comment.
-      
-      console.log('jsonFromServer', jsonFromServer);
-      const reverseList = newArr2.sort((a, b) => sortFunction(b, a, 'name'));
->>>>>>> 6535b5ca7cdbbc80d5ec2e63890b0f4d1176dcd5
-    })
+      })
     .catch((err) => {
       console.log(err)
       // set fave to no
-    });
+    })
 });
