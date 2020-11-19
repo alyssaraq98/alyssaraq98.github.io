@@ -36,24 +36,38 @@ app.route('/api')
     res.json(json);
   });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}!`);
-});
-
-// SQLite Settings
-
 function databaseInitialize() {
-  const dbSettings = {
-    filename: './tmp/database.db',
-    driver: sqlite3.Database
-  };
-
-  const db = new sqlite3.Database(dbSettings, (err) => {
+  const db = new sqlite3.Database('./config.js', (err) => {
     if (err) {
       console.error(err.message);
     }
-    console.log(`Connected to ${db} database.`);
+    console.log('Connected to the database.');
   });
 
-  db.close();
+  const dbSchema = `CREATE TABLE IF NOT EXISTS food (
+    name text NOT NULL PRIMARY KEY,
+    category text NOT NULL UNIQUE,
+    inspection_date text NOT NULL,
+    inspection_results text NOT NULL UNIQUE,
+    city text,
+    state text,
+    zip integer,
+    owner text,
+    type text
+);`;
+
+  db.run(dbSchema);
+
+  db.close((err) => {
+    if (err) {
+      console.error(err.message);
+    }
+    console.log('Close the database connection.');
+  });
 }
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}!`);
+  databaseInitialize();
+  console.log('Connected to the database');
+});
