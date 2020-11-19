@@ -71,3 +71,24 @@ app.listen(port, () => {
   databaseInitialize();
   console.log('Connected to the database');
 });
+
+app.route('/sql')
+  .get((req, res) => {
+    console.log('GET request detected');
+    res.send(`Lab 5 for ${process.env.NAME}`);
+  })
+  .post(async (req, res) => {
+    console.log('POST request detected');
+    console.log('Form data in res.body', req.body);
+
+    const json = await data.json();
+    console.log('data from fetch', json);
+    res.json(json);
+  });
+
+function foodDataFetcher() {
+  const data = fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
+  const json = data.json();
+  console.log('data from fetch', json);
+  return json;
+}
