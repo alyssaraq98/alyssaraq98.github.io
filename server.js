@@ -4,6 +4,8 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import fetch from 'node-fetch';
+import sqlite3 from 'sqlite3';
+import sqlite from 'sqlite';
 
 dotenv.config();
 
@@ -26,19 +28,12 @@ app.route('/api')
     res.send(`Lab 5 for ${process.env.NAME}`);
   })
   .post(async (req, res) => {
-<<<<<<< HEAD
-    const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
-    console.log('POST request detected');
-    const json = await data.json();
-    console.log('Fetch request data', data);
-=======
     console.log('POST request detected');
     console.log('Form data in res.body', req.body);
 
     const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
     const json = await data.json();
     console.log('data from fetch', json);
->>>>>>> 6535b5ca7cdbbc80d5ec2e63890b0f4d1176dcd5
     res.json(json);
   });
 
