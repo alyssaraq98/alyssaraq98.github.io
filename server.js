@@ -12,6 +12,10 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}!`);
+});
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
@@ -50,7 +54,7 @@ const dbSettings = {
 async function foodDataFetcher() {
   const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
   const json = await data.json();
-  console.log('data from fetch', json);
+  // console.log('data from fetch', json);
   return json;
 }
 
@@ -63,10 +67,26 @@ async function dataInput(data, db) {
       `INSERT INTO food (restaurant_name, category)
       VALUES ("${rName}", "${rCategory}")`
     );
-    console.log(`${rName} and ${rCategory} inserted`);
+    // console.log(`${rName} and ${rCategory} inserted`);
   } catch (e) {
     console.log('Error on insertion');
     console.log(e);
+  }
+}
+
+async function databaseRetriever(db) {
+  try {
+    const result = await db.all(
+      `SELECT category AS label,
+      COUNT(restaurant_name) AS y
+      FROM food
+      GROUP BY category`
+    );
+    console.log('Count Successful.');
+    return result;
+  } catch (e) {
+    console.log('Error on Count');
+    return console.log(e);
   }
 }
 
@@ -90,9 +110,6 @@ async function databaseInitialize() {
 
     data.forEach((entry) => { dataInput(entry, db); });
 
-    const test = await db.get('SELECT * FROM food');
-    console.log(test);
-
     console.log('Database connected.');
   } catch (e) {
     console.log('Error loading Database.');
@@ -100,22 +117,16 @@ async function databaseInitialize() {
   }
 }
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}!`);
-  databaseInitialize();
-  console.log('Connected to the database');
-});
+databaseInitialize();
 
 app.route('/sql')
   .get((req, res) => {
     console.log('GET request detected');
-    res.send(`Lab 5 for ${process.env.NAME}`);
   })
   .post(async (req, res) => {
     console.log('POST request detected');
     console.log('Form data in res.body', req.body);
-
-    const json = await data.json();
-    console.log('data from fetch', json);
-    res.json(json);
+    const db = await open(dbSettings);
+    const output = await databaseRetriever(db);
+    res.json(output);
   });
