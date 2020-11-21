@@ -36,14 +36,14 @@ app.route('/api')
     res.json(json);
   });
 
-function databaseInitialize() {
-  const db = new sqlite3.Database('./config.js', (err) => {
-    if (err) {
-      console.error(err.message);
-    }
-    console.log('Connected to the database.');
-  });
+const db = new sqlite3.Database('./config.js', (err) => {
+  if (err) {
+    console.error(err.message);
+  }
+  console.log('Connected to the database.');
+});
 
+function databaseInitialize() {
   const dbSchema = `CREATE TABLE IF NOT EXISTS food (
     name text NOT NULL PRIMARY KEY,
     category text NOT NULL UNIQUE,
@@ -91,4 +91,11 @@ function foodDataFetcher() {
   const json = data.json();
   console.log('data from fetch', json);
   return json;
+}
+
+function dataInput() {
+  db.exec(
+    `INSERT INTO ${food}(name, category, inspection_date, inspection_results, city, state, zip, owner, type) 
+    VALUES `
+  )
 }
