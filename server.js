@@ -4,6 +4,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import fetch from 'node-fetch';
+import { open } from 'sqlite';
 import sqlite3 from 'sqlite3';
 
 dotenv.config();
@@ -39,34 +40,64 @@ app.route('/api')
     res.json(json);
   });
 
-const db = new sqlite3.Database('./config.js', (err) => {
-  if (err) {
-    console.error(err.message);
+// SQLite Settings
+
+const dbSettings = {
+  filename: './tmp/database.db',
+  driver: sqlite3.Database
+};
+
+async function foodDataFetcher() {
+  const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
+  const json = await data.json();
+  console.log('data from fetch', json);
+  return json;
+}
+
+async function dataInput(data, db) {
+  try {
+    const rName = data.name;
+    const rCategory = data.category;
+
+    await db.exec(
+      `INSERT INTO food (restaurant_name, category)
+      VALUES ("${rName}", "${rCategory}")`
+    );
+    console.log(`${rName} and ${rCategory} inserted`);
+  } catch (e) {
+    console.log('Error on insertion');
+    console.log(e);
   }
-  console.log('Connected to the database.');
-});
+}
 
-function databaseInitialize() {
-  const dbSchema = `CREATE TABLE IF NOT EXISTS food (
-    name text NOT NULL PRIMARY KEY,
-    category text NOT NULL UNIQUE,
-    inspection_date text NOT NULL,
-    inspection_results text NOT NULL UNIQUE,
-    city text,
-    state text,
-    zip integer,
-    owner text,
-    type text
-);`;
+async function databaseInitialize() {
+  try {
+    const db = await open(dbSettings);
+    await db.exec(`CREATE TABLE IF NOT EXISTS food (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      restaurant_name TEXT,
+      category TEXT,
+      inspection_date TEXT,
+      inspection_results TEXT,
+      city TEXT,
+      state TEXT,
+      zip INTEGER,
+      owner TEXT,
+      type TEXT)
+      `);
 
-  db.run(dbSchema);
+    const data = await foodDataFetcher();
 
-  db.close((err) => {
-    if (err) {
-      console.error(err.message);
-    }
-    console.log('Close the database connection.');
-  });
+    data.forEach((entry) => { dataInput(entry, db); });
+
+    const test = await db.get('SELECT * FROM food');
+    console.log(test);
+
+    console.log('Database connected.');
+  } catch (e) {
+    console.log('Error loading Database.');
+    console.log(e);
+  }
 }
 
 app.listen(port, () => {
@@ -88,17 +119,3 @@ app.route('/sql')
     console.log('data from fetch', json);
     res.json(json);
   });
-
-function foodDataFetcher() {
-  const data = fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
-  const json = data.json();
-  console.log('data from fetch', json);
-  return json;
-}
-
-function dataInput() {
-  db.exec(
-    `INSERT INTO ${food}(name, category, inspection_date, inspection_results, city, state, zip, owner, type) 
-    VALUES `
-  )
-}
